@@ -1,0 +1,20 @@
+#Use PHP 5.4
+# Use PHP54 as default
+
+
+# BEGIN Redirect
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /timeport/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /mqrg-na/index.php [L]
+
+ ErrorDocument 404 /pages/errors/pagenotfound.php
+ ErrorDocument 500 /pages/errors/pagenotfound.php
+
+
+</IfModule>
+
+# END WordPress
